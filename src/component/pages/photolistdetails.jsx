@@ -21,11 +21,16 @@ const useStyles = makeStyles((theme) => ({
     color: theme.palette.text.secondary,
   },
   root2: {
-    maxWidth: 345,
+    maxWidth: 400,
+    height:300
   },
   media: {
     height: 140,
   },
+  container:{
+    margin:"auto",
+    width:"auto"
+  }
 }));
 const TypograpyItem = (props) => {
 
@@ -52,7 +57,7 @@ function Photolistdetails(props) {
       <TableContainer component={Paper}>
         <Table className={classes.table} size="small" aria-label="a dense table">
           <TableBody>
-          <Grid container spacing={3}>
+          <Grid className={classes.container} container spacing={3}>
               {props.photolist.slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage).map((item) => {
                 return (
                   <Grid item xs={4} key={item.id}>
